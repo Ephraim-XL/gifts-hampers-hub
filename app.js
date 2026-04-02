@@ -523,3 +523,48 @@ chips.forEach((chip, idx) => {
 });
 
 console.log('🎁 Gifts & Hampers Hub loaded successfully!');
+
+// =============================================
+// SCROLL DOTS — Mobile Carousel Indicators
+// =============================================
+function initScrollDots(scrollEl, dotsEl, itemSelector) {
+  if (!scrollEl || !dotsEl) return;
+
+  const items = scrollEl.querySelectorAll(itemSelector);
+  if (items.length === 0) return;
+
+  // Build dots
+  dotsEl.innerHTML = '';
+  items.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'scroll-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => {
+      items[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+    dotsEl.appendChild(dot);
+  });
+
+  // Update active dot on scroll
+  scrollEl.addEventListener('scroll', () => {
+    const scrollLeft = scrollEl.scrollLeft;
+    const itemWidth = scrollEl.offsetWidth;
+    const activeIndex = Math.round(scrollLeft / itemWidth);
+    dotsEl.querySelectorAll('.scroll-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }, { passive: true });
+}
+
+// Only activate on mobile
+function setupMobileDots() {
+  if (window.innerWidth > 768) return;
+  initScrollDots(document.querySelector('.steps-grid'), document.getElementById('stepsDots'), '.step-card');
+  initScrollDots(document.getElementById('sizeGrid'), document.getElementById('sizeDots'), '.size-card');
+  initScrollDots(document.getElementById('occasionsGrid'), document.getElementById('occasionsDots'), '.occasion-card');
+  initScrollDots(document.getElementById('testimonialsTrack'), document.getElementById('testimonialsDots'), '.testimonial-card');
+}
+
+// Run on load and on resize
+setupMobileDots();
+window.addEventListener('resize', setupMobileDots);
+

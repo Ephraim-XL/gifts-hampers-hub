@@ -16,7 +16,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <div class="nav-logo">
-        <img src="logo.png" alt="Gifts & Hampers Hub Logo" class="logo-image" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="logo.jpg" alt="Gifts & Hampers Hub Logo" class="logo-image" style="height: 50px; width: auto; object-fit: contain;" />
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero">Home</a></li>
@@ -109,6 +109,7 @@
           <p>Add a personalised message, choose your packaging, and we'll deliver it beautifully wrapped.</p>
         </div>
       </div>
+      <div class="scroll-dots" id="stepsDots"></div>
     </div>
   </section>
 
@@ -124,7 +125,7 @@
       <!-- Step 1: Size Selection -->
       <div class="builder-step" id="stepSize">
         <div class="step-label"><span class="step-badge">Step 1</span> Choose Your Hamper Size</div>
-        <div class="size-grid">
+        <div class="size-grid" id="sizeGrid">
           <div class="size-card" data-size="small" data-capacity="4" data-price="25" id="sizeSmall">
             <div class="size-visual sm-vis">
               <div class="box-icon">📦</div>
@@ -168,6 +169,7 @@
             <button class="btn btn-outline select-size-btn" data-size="xlarge" data-capacity="22" data-price="150">Select</button>
           </div>
         </div>
+        <div class="scroll-dots" id="sizeDots"></div>
       </div>
 
       <!-- Step 2: Item Picker (hidden until size selected) -->
@@ -290,7 +292,7 @@
         <h2 class="section-title">What's the Occasion?</h2>
         <p class="section-subtitle">We craft hampers for every moment worth celebrating</p>
       </div>
-      <div class="occasions-grid">
+      <div class="occasions-grid" id="occasionsGrid">
         <div class="occasion-card" id="occBirthday">
           <div class="occ-emoji">🎂</div>
           <div class="occ-overlay">
@@ -340,6 +342,7 @@
           </div>
         </div>
       </div>
+      <div class="scroll-dots" id="occasionsDots"></div>
     </div>
   </section>
 
@@ -372,6 +375,7 @@
           <div class="reviewer"><span class="reviewer-avatar">P</span><span class="reviewer-name">Priya N.</span></div>
         </div>
       </div>
+      <div class="scroll-dots" id="testimonialsDots"></div>
     </div>
   </section>
 
@@ -386,11 +390,11 @@
           <div class="contact-details">
             <div class="contact-item">
               <span class="contact-icon">📧</span>
-              <span>hello@giftsandhampers.hub</span>
+              <span>[EMAIL_ADDRESS]</span>
             </div>
             <div class="contact-item">
               <span class="contact-icon">📞</span>
-              <span>+1 (800) HAMPERS</span>
+              <span>0249468477</span>
             </div>
             <div class="contact-item">
               <span class="contact-icon">📍</span>
@@ -462,7 +466,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Gifts &amp; Hampers Hub. All rights reserved.</p>
+        <p>©Friutful Tech. All rights reserved.</p>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
